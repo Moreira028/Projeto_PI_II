@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMouseEntered="#select" onMouseExited="#exit" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #F1F1F1;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.senac.pi.TelaCadastroClienteController">
+   <children>
+      <Pane fx:id="clientButton" onMouseClicked="#cadastroCliente" onMouseEntered="#selectClient" onMouseExited="#exitClient" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+            <ImageView fitHeight="32.0" fitWidth="56.0" layoutX="11.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cliente-area.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="packageButton" layoutY="103.0" onMouseClicked="#cadastroProduto" onMouseEntered="#selectPackage" onMouseExited="#exitPackage" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+            <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/102348.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="shopButton" layoutY="206.0" onMouseClicked="#vendasButton" onMouseEntered="#selectShop" onMouseExited="#exitShop" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/34562.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="reportButton" layoutY="309.0" onMouseClicked="#emitirRelatorio" onMouseEntered="#selectReport" onMouseExited="#exitReport" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/1380341.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane layoutX="77.0" opacity="0.63" prefHeight="36.0" prefWidth="625.0" style="-fx-background-color: #800080;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="2.0" prefHeight="32.0" prefWidth="182.0" text="Cadastro de cliente" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField layoutX="138.0" layoutY="82.0" prefHeight="25.0" prefWidth="503.0" />
+      <Label fx:id="inputNome" layoutX="139.0" layoutY="61.0" text="Nome Completo*" />
+      <TextField fx:id="inputCpf" layoutX="140.0" layoutY="136.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="141.0" layoutY="119.0" text="CPF/CNPJ*" />
+      <TextField fx:id="inputEmail" layoutX="327.0" layoutY="191.0" prefHeight="25.0" prefWidth="313.0" />
+      <Label layoutX="326.0" layoutY="171.0" text="E-mail" />
+      <TextField fx:id="inputTelefone" layoutX="139.0" layoutY="191.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="140.0" layoutY="171.0" text="Telefone" />
+      <TextField fx:id="inputEndereco" layoutX="138.0" layoutY="249.0" prefHeight="25.0" prefWidth="170.0" />
+      <TextField fx:id="inputNumero" layoutX="326.0" layoutY="250.0" prefHeight="25.0" prefWidth="72.0" />
+      <TextField fx:id="inputComplemento" layoutX="415.0" layoutY="250.0" prefHeight="25.0" prefWidth="224.0" />
+      <Label layoutX="139.0" layoutY="229.0" text="Logadouro" />
+      <Label layoutX="327.0" layoutY="230.0" text="Número" />
+      <Label layoutX="417.0" layoutY="230.0" text="Complemento" />
+      <TextField layoutX="138.0" layoutY="304.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label fx:id="inputCep" layoutX="139.0" layoutY="285.0" text="CEP" />
+      <ChoiceBox layoutX="323.0" layoutY="305.0" prefHeight="25.0" prefWidth="132.0" />
+      <ChoiceBox layoutX="467.0" layoutY="306.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="324.0" layoutY="285.0" text="Estado" />
+      <Label layoutX="468.0" layoutY="286.0" text="Cidade" />
+      <Button layoutX="585.0" layoutY="348.0" mnemonicParsing="false" style="-fx-border-color: blue;" text="Salvar" />
+      <Label layoutX="325.0" layoutY="116.0" text="Gênero" />
+      <ChoiceBox layoutX="412.0" layoutY="136.0" prefHeight="25.0" prefWidth="83.0" />
+      <Label layoutX="414.0" layoutY="116.0" text="Estado Civil" />
+      <Label layoutX="508.0" layoutY="116.0" text="Data de Nascimento" />
+      <DatePicker layoutX="507.0" layoutY="136.0" prefHeight="25.0" prefWidth="132.0" />
+      <Button layoutX="140.0" layoutY="348.0" mnemonicParsing="false" style="-fx-border-color: blue;" text="Limpar" />
+      <Button layoutX="464.0" layoutY="348.0" mnemonicParsing="false" onAction="#controleCliente" prefHeight="27.0" prefWidth="94.0" style="-fx-border-color: blue;" text="Controle" />
+      <ComboBox layoutX="323.0" layoutY="136.0" prefHeight="25.0" prefWidth="77.0" />
+   </children>
+</AnchorPane>

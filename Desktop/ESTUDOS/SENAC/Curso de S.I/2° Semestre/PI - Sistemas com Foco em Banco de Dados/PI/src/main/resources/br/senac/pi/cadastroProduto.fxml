@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" onMouseEntered="#select" onMouseExited="#exit" prefHeight="410.0" prefWidth="700.0" style="-fx-background-color: #F1F1F1;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.senac.pi.CadastroProdutoController">
+   <children>
+      <Pane layoutX="75.0" opacity="0.63" prefHeight="36.0" prefWidth="625.0" style="-fx-background-color: #800080;">
+         <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="2.0" prefHeight="32.0" prefWidth="182.0" text="Cadastro de produtos" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Regular" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <TextField fx:id="namepTextField" layoutX="89.0" layoutY="136.0" prefHeight="25.0" prefWidth="202.0" promptText="Digite o nome do produto" />
+      <TextField fx:id="precoTextField" layoutX="89.0" layoutY="191.0" prefHeight="25.0" prefWidth="202.0" promptText="Preço do produto" />
+      <TextField fx:id="fabTextField" layoutX="89.0" layoutY="246.0" prefHeight="25.0" prefWidth="202.0" promptText="Fabricante" />
+      <Button layoutX="548.0" layoutY="331.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="25.0" prefWidth="114.0" text="Cadastrar" />
+      <Label layoutX="89.0" layoutY="119.0" prefHeight="17.0" prefWidth="202.0" text="Nome do Produto:" />
+      <Label layoutX="89.0" layoutY="174.0" prefHeight="17.0" prefWidth="202.0" text="Preço do Produto:" />
+      <Label layoutX="89.0" layoutY="229.0" prefHeight="17.0" prefWidth="202.0" text="Fabricante:" />
+      <Pane fx:id="clientButton" onMouseClicked="#cadastroCliente" onMouseEntered="#selectClient" onMouseExited="#exitClient" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="56.0" layoutX="11.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/cliente-area.png" />
+               </image>
+            </ImageView>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="packageButton" layoutY="103.0" onMouseClicked="#cadastroProduto" onMouseEntered="#selectPackage" onMouseExited="#exitPackage" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+            <ImageView fitHeight="49.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/102348.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="shopButton" layoutY="206.0" onMouseClicked="#vendasButton" onMouseEntered="#selectShop" onMouseExited="#exitShop" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="3.0" prefWidth="77.0" style="-fx-background-color: #800080;" />
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/34562.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <Pane fx:id="reportButton" layoutY="309.0" onMouseClicked="#emitirRelatorio" onMouseEntered="#selectReport" onMouseExited="#exitReport" prefHeight="103.0" prefWidth="77.0" style="-fx-background-color: #FFF;">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="19.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/1380341.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <TableView fx:id="TableProduto" layoutX="307.0" layoutY="65.0" prefHeight="258.0" prefWidth="380.0">
+        <columns>
+          <TableColumn fx:id="ColunaID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="ColunaNome" prefWidth="111.0" text="Nome" />
+            <TableColumn fx:id="ColunaPreco" prefWidth="97.0" text="Preço" />
+            <TableColumn fx:id="ColunaFabricante" prefWidth="96.0" text="Fabricante" />
+        </columns>
+      </TableView>
+      <Button layoutX="331.0" layoutY="331.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="25.0" prefWidth="114.0" text="Pesquisar" />
+      <Button layoutX="331.0" layoutY="365.0" mnemonicParsing="false" onAction="#deletar" prefHeight="25.0" prefWidth="114.0" text="Deletar" />
+      <Button layoutX="548.0" layoutY="365.0" mnemonicParsing="false" onAction="#editar" prefHeight="25.0" prefWidth="56.0" text="Editar" />
+      <TextField fx:id="idTextField" layoutX="89.0" layoutY="82.0" prefHeight="25.0" prefWidth="202.0" promptText="Id" />
+      <Label layoutX="89.0" layoutY="65.0" prefHeight="17.0" prefWidth="202.0" text="Id:" />
+      <Button layoutX="606.0" layoutY="365.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="56.0" text="Salvar" />
+      <TextField fx:id="catTextField" layoutX="89.0" layoutY="306.0" prefHeight="25.0" prefWidth="202.0" promptText="Categoria" />
+      <Label layoutX="89.0" layoutY="289.0" prefHeight="17.0" prefWidth="202.0" text="Categoria:" />
+   </children>
+</AnchorPane>
